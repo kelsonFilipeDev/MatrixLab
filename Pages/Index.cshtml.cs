@@ -1,12 +1,11 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace MatrixLab.Pages;
-
-public class IndexModel : PageModel
+namespace MatrixLab.Pages
 {
-    public void OnGet()
+    public class IndexModel : PageModel
     {
-
+        public void OnGet()
+        {
+        }
     }
 }

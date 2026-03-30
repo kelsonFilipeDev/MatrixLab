@@ -1,0 +1,33 @@
+@page
+@model MatrixLab.Pages.Exercise6Model
+@{
+    ViewData["Title"] = "Exercício 6";
+}
+
+<div class="exercise-page">
+    <a href="/" class="btn-back">← Voltar</a>
+    <h2>Exercício 6</h2>
+    <p class="exercise-desc">Matriz 4×5 de inteiros — calcular e imprimir a soma de todos os elementos.</p>
+
+    <form method="post">
+        <div class="matrix-grid" style="--cols: 5">
+            @for (int i = 0; i < 4; i++)
+            @for (int j = 0; j < 5; j++)
+            {
+                <input type="number" name="Matrix[@i][@j]" value="@Model.Matrix[i][j]" class="matrix-cell" />
+            }
+        </div>
+        <div class="btn-group">
+            <button type="submit" asp-page-handler="Generate" class="btn-secondary">🔀 Gerar Aleatório</button>
+            <button type="submit" asp-page-handler="Execute" class="btn-primary">▶ Executar</button>
+        </div>
+    </form>
+
+    @if (Model.Total.HasValue)
+    {
+        <div class="result-box">
+            <h3>Soma Total</h3>
+            <div class="total-display">@Model.Total</div>
+        </div>
+    }
+</div>

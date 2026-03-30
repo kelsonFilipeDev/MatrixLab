@@ -1,0 +1,39 @@
+@page
+@model MatrixLab.Pages.Exercise3Model
+@{
+    ViewData["Title"] = "Exercício 3";
+}
+
+<div class="exercise-page">
+    <a href="/" class="btn-back">← Voltar</a>
+    <h2>Exercício 3</h2>
+    <p class="exercise-desc">Matriz 5×5 de inteiros — imprimir elementos em posições cuja linha + coluna formam número par.</p>
+
+    <form method="post">
+        <div class="matrix-grid" style="--cols: 5">
+            @for (int i = 0; i < 5; i++)
+            @for (int j = 0; j < 5; j++)
+            {
+                <input type="number" name="Matrix[@i][@j]" value="@Model.Matrix[i][j]"
+                       class="matrix-cell @((i + j) % 2 == 0 ? "cell-highlight" : "")" />
+            }
+        </div>
+        <div class="btn-group">
+            <button type="submit" asp-page-handler="Generate" class="btn-secondary">🔀 Gerar Aleatório</button>
+            <button type="submit" asp-page-handler="Execute" class="btn-primary">▶ Executar</button>
+        </div>
+    </form>
+
+    @if (Model.Result != null)
+    {
+        <div class="result-box">
+            <h3>Elementos com linha + coluna par</h3>
+            <div class="result-list">
+                @foreach (var item in Model.Result)
+                {
+                    <div class="result-tag">[@item.Row, @item.Col] = @item.Value</div>
+                }
+            </div>
+        </div>
+    }
+</div>

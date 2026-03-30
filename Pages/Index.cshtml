@@ -1,10 +1,22 @@
-﻿@page
+@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "MatrixLab";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="dashboard">
+    <div class="dashboard-header">
+        <h1>MatrixLab</h1>
+        <p>Exercícios de Matrizes em C#</p>
+    </div>
+
+    <div class="exercise-grid">
+        @for (int i = 1; i <= 9; i++)
+        {
+            <a href="/Exercise@(i)" class="exercise-card">
+                <span class="exercise-number">@i</span>
+                <span class="exercise-label">Exercício @i</span>
+            </a>
+        }
+    </div>
 </div>

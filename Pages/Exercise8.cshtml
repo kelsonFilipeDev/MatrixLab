@@ -1,0 +1,84 @@
+@page
+@model MatrixLab.Pages.Exercise8Model
+@{
+    ViewData["Title"] = "Exercício 8";
+}
+
+<div class="exercise-page">
+    <a href="/" class="btn-back">← Voltar</a>
+    <h2>Exercício 8</h2>
+    <p class="exercise-desc">Matriz 12×4 de vendas — total por mês, total por semana e total anual.</p>
+
+    <form method="post">
+        <table class="sales-table">
+            <thead>
+                <tr>
+                    <th>Mês</th>
+                    <th>Semana 1</th>
+                    <th>Semana 2</th>
+                    <th>Semana 3</th>
+                    <th>Semana 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < 12; i++)
+                {
+                    <tr>
+                        <td class="month-label">@Model.Months[i]</td>
+                        @for (int j = 0; j < 4; j++)
+                        {
+                            <td>
+                                <input type="number" name="Matrix[@i][@j]" value="@Model.Matrix[i][j]" class="matrix-cell" />
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="btn-group">
+            <button type="submit" asp-page-handler="Generate" class="btn-secondary">🔀 Gerar Aleatório</button>
+            <button type="submit" asp-page-handler="Execute" class="btn-primary">▶ Executar</button>
+        </div>
+    </form>
+
+    @if (Model.Result != null)
+    {
+        <div class="result-box">
+            <h3>Total por Mês</h3>
+            <table class="sales-table">
+                <thead>
+                    <tr><th>Mês</th><th>Total</th></tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < 12; i++)
+                    {
+                        <tr>
+                            <td class="month-label">@Model.Months[i]</td>
+                            <td class="result-cell">@Model.Result.MonthTotals[i]</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:2rem">Total por Semana</h3>
+            <table class="sales-table">
+                <thead>
+                    <tr><th>Semana</th><th>Total</th></tr>
+                </thead>
+                <tbody>
+                    @for (int j = 0; j < 4; j++)
+                    {
+                        <tr>
+                            <td class="month-label">Semana @(j + 1)</td>
+                            <td class="result-cell">@Model.Result.WeekTotals[j]</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:2rem">Total Anual</h3>
+            <div class="total-display">@Model.Result.YearTotal</div>
+        </div>
+    }
+</div>

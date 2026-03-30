@@ -4,6 +4,21 @@
     ViewData["Title"] = "MatrixLab";
 }
 
+@{
+    var exercises = new[]
+    {
+        "Leitura e impressão de matriz 10×10",
+        "Matriz 3×3 multiplicada por 2",
+        "Elementos em posições com linha + coluna par",
+        "Soma de duas matrizes 2×2",
+        "Diferença de duas matrizes 3×3",
+        "Soma de todos os elementos de matriz 4×5",
+        "Trocas de linhas, colunas e diagonais em 5×5",
+        "Vendas mensais — totais por mês, semana e ano",
+        "Vendas por produto — totais mensais e anuais"
+    };
+}
+
 <div class="dashboard">
     <div class="dashboard-header">
         <h1>MatrixLab</h1>
@@ -11,11 +26,11 @@
     </div>
 
     <div class="exercise-grid">
-        @for (int i = 1; i <= 9; i++)
+        @for (int i = 0; i < 9; i++)
         {
-            <a href="/Exercise@(i)" class="exercise-card">
-                <span class="exercise-number">@i</span>
-                <span class="exercise-label">Exercício @i</span>
+            <a href="/Exercise@(i + 1)" class="exercise-card">
+                <span class="exercise-number">@(i + 1)</span>
+                <span class="exercise-label">@exercises[i]</span>
             </a>
         }
     </div>

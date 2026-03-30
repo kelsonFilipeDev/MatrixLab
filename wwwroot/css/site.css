@@ -6,6 +6,7 @@ body {
     color: #001F5B;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -71,9 +72,11 @@ body {
 }
 
 .exercise-label {
-    font-size: 0.95rem;
+    font-size: 0.82rem;
     color: #1E90FF;
     font-weight: 500;
+    text-align: center;
+    line-height: 1.4;
 }
 
 .exercise-card:hover .exercise-label {
@@ -246,4 +249,40 @@ body {
     font-weight: 600;
     color: #001F5B;
     text-align: left !important;
+}
+
+.footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: #999;
+    font-size: 0.85rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.error-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    text-align: center;
+    gap: 1rem;
+}
+
+.error-code {
+    font-size: 8rem;
+    font-weight: 700;
+    color: #1E90FF;
+    line-height: 1;
+}
+
+.error-page h2 {
+    font-size: 1.8rem;
+    color: #001F5B;
+}
+
+.error-page p {
+    color: #555;
+    font-size: 1rem;
 }

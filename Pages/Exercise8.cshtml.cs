@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace MatrixLab.Pages;
 
-public class Exercise8Model : PageModel
+public class Exercise8Model : BasePage
 {
     [BindProperty]
     public int[][] Matrix { get; set; } = GenerateRandom();
@@ -17,7 +17,7 @@ public class Exercise8Model : PageModel
         "Setembro", "Outubro", "Novembro", "Dezembro"
     ];
 
-    public void OnGet() { }
+    public IActionResult OnGet() => CheckAuth();
 
     public void OnPostGenerate()
     {

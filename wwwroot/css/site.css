@@ -286,3 +286,98 @@ body {
     color: #555;
     font-size: 1rem;
 }
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #F5F5F5;
+}
+
+.login-card {
+    background: white;
+    border: 2px solid #1E90FF;
+    border-radius: 16px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-card h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #001F5B;
+    margin-bottom: 0.25rem;
+}
+
+.login-subtitle {
+    color: #1E90FF;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.login-field {
+    text-align: left;
+    margin-bottom: 1.25rem;
+}
+
+.login-field label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #001F5B;
+    margin-bottom: 0.4rem;
+}
+
+.login-field input {
+    width: 100%;
+    padding: 0.65rem 1rem;
+    border: 1.5px solid #1E90FF;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #001F5B;
+    background: #F5F5F5;
+    outline: none;
+}
+
+.login-field input:focus {
+    border-color: #001F5B;
+    background: white;
+}
+
+.login-btn {
+    width: 100%;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+
+.login-error {
+    background: #ffe8e8;
+    color: #cc0000;
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    font-size: 0.88rem;
+    margin-bottom: 1.25rem;
+}
+
+.topbar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.75rem 2rem;
+    background: white;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.logout-btn {
+    color: #cc0000;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.logout-btn:hover {
+    text-decoration: underline;
+}

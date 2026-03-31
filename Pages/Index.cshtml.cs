@@ -3,10 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace MatrixLab.Pages;
 
-public class IndexModel : PageModel
+public class IndexModel : BasePage
 {
-    public void OnGet()
-    {
-
-    }
+    public IActionResult OnGet() => CheckAuth();
 }

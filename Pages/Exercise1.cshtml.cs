@@ -3,15 +3,15 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace MatrixLab.Pages;
 
-public class Exercise1Model : PageModel
+public class Exercise1Model : BasePage
 {
     [BindProperty]
     public int[][] Matrix { get; set; } = GenerateRandom();
 
     public List<int>? Result { get; set; }
 
-    public void OnGet() { }
-
+    public IActionResult OnGet() => CheckAuth();
+    
     public void OnPostGenerate()
     {
         Matrix = GenerateRandom();

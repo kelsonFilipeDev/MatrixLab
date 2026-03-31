@@ -1,0 +1,41 @@
+@page
+@model MatrixLab.Pages.LoginModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MatrixLab — Login</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <h1>MatrixLab</h1>
+            <p class="login-subtitle">Exercícios de Matrizes em C#</p>
+
+            @if (Model.Error)
+            {
+                <div class="login-error">Credenciais inválidas. Tenta novamente.</div>
+            }
+
+            <form method="post">
+                <div class="login-field">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="Username" placeholder="admin" autocomplete="off" />
+                </div>
+                <div class="login-field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="Password" placeholder="••••••••" />
+                </div>
+                <button type="submit" class="btn-primary login-btn">Entrar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
